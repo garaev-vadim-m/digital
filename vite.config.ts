@@ -3,5 +3,6 @@ export default defineConfig({
   build: {
     minify: false,
     outDir: 'docs',
+    assetsDir: '',
   },
 });
