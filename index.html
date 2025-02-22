@@ -9,7 +9,9 @@
   </head>
   <body>
     <header class="header">
-      <img class="header_logo" src="/src/app/image/icon/icon_logo.png" alt="logo" />
+      <a href="/">
+        <img class="header_logo" src="/src/app/image/icon/icon_logo.png" alt="logo" />
+      </a>
       <nav class="header_navbar">
         <ul class="header_list" id="menu">
           <li>
@@ -32,30 +34,39 @@
     <section class="section">
       <div class="container greeting">
         <div class="greeting_title">
-          <h1>ЦИФРОХОД <br />БИЗНЕС - КРУИЗ</h1>
-          <h2>Уникальное отраслевое мероприятие для проффесианалов и гуру в области систем управления ресурсами</h2>
-          <h3>23 - 25 июня</h3>
+          <h1 class="greeting_titleText">ЦИФРОХОД <br /><span>БИЗНЕС - КРУИЗ</span></h1>
+          <h2 class="greeting_titleText_subtitle">
+            Уникальное отраслевое мероприятие для профессионалов <br />
+            и гуру в области систем управления ресурсами
+          </h2>
+          <div class="greeting_titleDate">
+            <h3 class="greeting_titleText greeting_titleText_date">23 - 25 июня</h3>
+          </div>
         </div>
         <div class="greeting_subtitle">
           <div class="greeting_paragraph">
-            <p>Приглашаем принять участие в увлекательном трехдневном бизнес-круизе.</p>
-            <p>
+            <p class="greeting_paragraph_text">Приглашаем принять участие в увлекательном трехдневном бизнес-круизе.</p>
+            <p class="greeting_paragraph_text">
               В кругу единомышленников сможете обсудить стратегические вопросы развития бизнеса и новые технологии, а
               также углубиться в истоки духовности.
             </p>
-            <p>
+            <p class="greeting_paragraph_text">
               Это путешествие станет отличной возможностью для сближения отраслевого сообщества, где сможете завести
               новые знакомства и установить ценные связи в неформальной обстановке.
             </p>
-            <p>Мы уверены, что это мероприятие поможет вам найти поставщиков и заказчиков.</p>
+            <p class="greeting_paragraph_text">
+              Мы уверены, что это мероприятие поможет вам найти поставщиков и заказчиков.
+            </p>
           </div>
-          <div>icon valaam</div>
+          <div class="greeting_icon">
+            <img class="greeting_valaam" src="src/app/image/icon/icon_map.png" alt="valaam" />
+          </div>
         </div>
-        <div>
-          <button>ui button</button>
-          <button>ui button</button>
-          <button>ui button</button>
-          <button>ui button</button>
+        <div class="greeting_buttonGroup">
+          <base-button class="button">ERP</base-button>
+          <base-button class="button">логистика</base-button>
+          <base-button class="button">переработка</base-button>
+          <base-button class="button">сбыт</base-button>
         </div>
       </div>
     </section>

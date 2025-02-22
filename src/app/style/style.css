@@ -11,5 +11,5 @@ h1 {
 
 .container {
   padding: 0 16px;
-  height: calc(100vh - 130px);
+  min-height: calc(100vh - 130px);
 }
