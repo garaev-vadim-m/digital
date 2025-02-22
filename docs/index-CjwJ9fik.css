@@ -249,7 +249,6 @@ table {
     justify-content: center;
   }
 
-
   /* Анимация открытия меню */
   .header_list.active {
     transform: translateX(0);
