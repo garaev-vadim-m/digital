@@ -11,7 +11,7 @@ h1 {
 
 .container {
   padding: 0 16px;
-  height: calc(100vh - 130px);
+  min-height: calc(100vh - 130px);
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -180,12 +180,14 @@ table {
   font-size: clamp(10px, 5vw, 14px);
   color: var(--color-yellow);
   cursor: pointer;
+  opacity: 100%;
   transition: all 0.4s ease;
   text-decoration: none;
 
   &:hover {
     /* bottom: 1px; */
     position: relative;
+    opacity: 70%;
   }
 }
 
@@ -215,7 +217,7 @@ table {
 .burger_icon span {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: var(--color-yellow);
   transition:
     transform 0.3s ease,
     opacity 0.3s ease;
@@ -265,6 +267,101 @@ table {
 
 .greeting {
   padding: 16px;
+  /*padding-top: 0;*/
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  gap: 32px;
+}
+
+.greeting_title {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-image: url('./background_sheep-DtS3jq6I.png');
+  background-size: cover; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: center; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
+.greeting_titleText {
+  font-size: clamp(28px, 5vw, 64px);
+  font-weight: 600;
+  color: var(--color-yellow);
+  span {
+    color: var(--color-white);
+    margin-left: 55px;
+  }
+}
+
+.greeting_titleDate {
+  background-color: #222222;
+  padding: 16px;
+  width: 50%;
+  max-width: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.greeting_titleText_subtitle {
+  font-size: clamp(20px, 5vw, 25px);
+  color: #787878;
+}
+
+.greeting_subtitle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  .greeting_paragraph {
+    flex: 1;
+  }
+}
+
+.greeting_paragraph {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  background-color: #222222;
+  padding: 16px;
+  min-height: 250px;
+}
+
+.greeting_paragraph_text {
+  font-size: clamp(14px, 10vw, 25px);
+}
+
+.greeting_icon {
+  min-width: 165px;
+  background-color: #222222;
+  min-height: 250px;
+  padding: 16px;
+}
+
+.greeting_valaam {
+  height: 250px;
+}
+
+.greeting_buttonGroup {
+  display: flex;
+  align-items: center;
+  /*justify-content: space-between;*/
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+
+  .button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 1280px) {
+  .greeting_icon {
+    display: none;
+  }
+}
+
+@media (max-width: 728px) {
 }
 
 :root {
