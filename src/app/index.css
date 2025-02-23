@@ -4,6 +4,7 @@
 @import './style/greeting.css';
 @import './style/program.css';
 @import './style/partner.css';
+@import './style/footer.css';
 :root {
   font-family: Gorizont, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
