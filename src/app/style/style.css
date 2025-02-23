@@ -28,3 +28,11 @@ h1 {
 .divLink {
   height: 100px;
 }
+
+.section_title {
+  font-size: clamp(24px, 5vw, 44px);
+  font-weight: 600;
+  color: var(--color-yellow);
+  padding: 16px;
+  margin-bottom: clamp(30px, 5vw, 60px);
+}

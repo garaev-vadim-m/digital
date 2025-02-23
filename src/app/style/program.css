@@ -52,7 +52,6 @@
 }
 
 .program_sub {
-
   /*width: 100%;*/
   display: flex;
   flex-direction: column;
@@ -81,8 +80,6 @@
   /*align-items: center;*/
   /*flex-direction: column;*/
 }
-
-
 
 .program_Days {
   background-image: url('../image/background/background_vera.png');
@@ -172,9 +169,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-.program_Days_card {
-  grid-template-columns: 1fr;
-}
+  .program_Days_card {
+    grid-template-columns: 1fr;
+  }
   .transform_text {
     transform: rotate(0);
   }

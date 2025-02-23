@@ -3,6 +3,7 @@
 @import './style/header.css';
 @import './style/greeting.css';
 @import './style/program.css';
+@import './style/partner.css';
 :root {
   font-family: Gorizont, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

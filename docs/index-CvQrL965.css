@@ -29,6 +29,14 @@ h1 {
   height: 100px;
 }
 
+.section_title {
+  font-size: clamp(24px, 5vw, 44px);
+  font-weight: 600;
+  color: var(--color-yellow);
+  padding: 16px;
+  margin-bottom: clamp(30px, 5vw, 60px);
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -434,7 +442,6 @@ table {
 }
 
 .program_sub {
-
   /*width: 100%;*/
   display: flex;
   flex-direction: column;
@@ -555,9 +562,9 @@ table {
 }
 
 @media screen and (max-width: 1024px) {
-.program_Days_card {
-  grid-template-columns: 1fr;
-}
+  .program_Days_card {
+    grid-template-columns: 1fr;
+  }
   .transform_text {
     transform: rotate(0);
   }
@@ -569,6 +576,95 @@ table {
 
   .program_days-timeText {
     flex-direction: column;
+  }
+}
+
+.partner {
+  text-align: center;
+}
+
+.partner_cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.partner_card {
+  min-height: 275px;
+  padding: 24px;
+  text-align: left;
+  background-color: #222222;
+  display: grid;
+  place-items: center;
+
+  .partner_cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+}
+
+.partner_buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: clamp(14px, 5vw, 22px);
+  justify-content: flex-end;
+}
+
+.partner_title {
+  font-size: clamp(18px, 5vw, 28px);
+  line-height: 1.4;
+}
+
+.partner_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style-type: disc; /* Маркер в виде кружка */
+  padding-left: 20px; /* Отступ слева для списка */
+  li {
+    font-size: clamp(14px, 5vw, 22px);
+  }
+}
+
+.partner_list {
+  list-style-type: disc; /* Маркер в виде кружка */
+  padding-left: 20px; /* Отступ слева для списка */
+}
+
+.partner_list li::marker {
+  color: var(--color-yellow); /* Цвет маркера */
+  font-size: 1.2em; /* Размер маркера */
+}
+
+.partner_billet {
+  font-size: clamp(10px, 5vw, 18px);
+  color: var(--color-yellow);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.partner_info {
+  margin-top: 50px;
+  min-height: 140px;
+  display: grid;
+  place-items: center;
+  background-color: #222222;
+  padding: 24px;
+  p {
+    color: var(--color-white);
+    text-align: left;
+    font-size: clamp(24px, 5vw, 44px);
+    line-height: 1.4;
+    font-weight: 300;
+  }
+}
+
+@media (max-width: 768px) {
+  .partner_cards {
+    grid-template-columns: 1fr;
   }
 }
 

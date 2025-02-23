@@ -63,7 +63,7 @@ class BaseButton extends HTMLElement {
         cursor: default;
         transition: all 0.4s ease;
         width: ${this.handleWidth(`${this.getAttribute("size") || "100"}%;`)}
-        max-height: ${this.getAttribute("size") || "100"}%;
+        max-height: ${this.handleWidth(`${this.getAttribute("height") || "100"}%;`)}
         text-align: center;
       }
 
