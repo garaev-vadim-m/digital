@@ -60,6 +60,7 @@ class BaseButton extends HTMLElement {
         background-color: ${this.getAttribute("color") || "var(--color-black)"};
         border:1px solid  var(--color-yellow);
         border-radius: 10px;
+          white-space: nowrap;
         cursor: default;
         transition: all 0.4s ease;
         width: ${this.handleWidth(`${this.getAttribute("size") || "100"}%;`)}
