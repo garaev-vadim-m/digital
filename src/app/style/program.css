@@ -1,0 +1,41 @@
+.program {
+  background-image: url('../image/background/background_cerkov.png');
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: top right; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
+.program_title {
+  font-size: clamp(24px, 5vw, 44px);
+  font-weight: 600;
+  color: var(--color-yellow);
+  padding: 16px;
+}
+
+.program_days {
+  max-width: 50%;
+  /*margin: 0 auto;*/
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.program_day {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.program_day-one {
+  margin: 0 auto;
+}
+
+.program_day_button {
+  max-width: 140px;
+}
+
+.program_day_title {
+  color: var(--color-yellow);
+  font-weight: 500;
+  font-size: clamp(14px, 5vw, 18px);
+}

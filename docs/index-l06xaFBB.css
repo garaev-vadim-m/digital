@@ -14,6 +14,10 @@ h1 {
   min-height: calc(100vh - 130px);
 }
 
+.divLink {
+  height: 100px;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -362,6 +366,48 @@ table {
 }
 
 @media (max-width: 728px) {
+}
+
+.program {
+  background-image: url('./background_cerkov-CkZ34DC6.png');
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: top right; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
+.program_title {
+  font-size: clamp(24px, 5vw, 44px);
+  font-weight: 600;
+  color: var(--color-yellow);
+  padding: 16px;
+}
+
+.program_days {
+  max-width: 50%;
+  /*margin: 0 auto;*/
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.program_day {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.program_day-one {
+  margin: 0 auto;
+}
+
+.program_day_button {
+  max-width: 140px;
+}
+
+.program_day_title {
+  color: var(--color-yellow);
+  font-weight: 500;
+  font-size: clamp(14px, 5vw, 18px);
 }
 
 :root {

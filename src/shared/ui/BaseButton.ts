@@ -10,8 +10,8 @@ export class BaseButton extends HTMLElement {
     const style = document.createElement('style');
     style.textContent = `
       button {
-        padding: 8px clamp(30px, 5vw, 100px);
-        font-size: clamp(28px, 5vw, 36px);
+        padding: 8px clamp(30px, 5vw, ${this.getAttribute('maxPadding') || '100'}px);
+        font-size: clamp(14px, 5vw, ${this.getAttribute('maxFontSize') || '36'}px);
         color: var(--color-yellow);
         background-color: ${this.getAttribute('color') || 'var(--color-black)'};
         border:1px solid  var(--color-yellow);
@@ -20,6 +20,7 @@ export class BaseButton extends HTMLElement {
         transition: all 0.4s ease;
         width: ${this.getAttribute('size') || '100'}%;
         max-height: ${this.getAttribute('size') || '100'}%;
+        text-align: center;
       }
 
       button:hover {

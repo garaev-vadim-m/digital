@@ -2,6 +2,7 @@
 @import './style/reset.css';
 @import './style/header.css';
 @import './style/greeting.css';
+@import './style/program.css';
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
