@@ -55,6 +55,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: clamp(24px, 5vw, 48px);
 }
 
@@ -74,10 +75,28 @@
   line-height: 22px;
 }
 
+.section_programDays {
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*flex-direction: column;*/
+}
+
+
+
 .program_Days {
+  background-image: url('../image/background/background_vera.png');
+  background-size: 60%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: right; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 64px;
+}
+
+.program_titleDays {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 50px;
 }
 
 .program_Days_card {
@@ -114,6 +133,7 @@
 
 .program_Days_card-text {
   flex: 1;
+  min-width: 1300px;
   height: 100%;
   background-color: #222222;
   padding: 16px;
@@ -122,15 +142,48 @@
   gap: 16px;
   justify-content: center;
 }
+
+/*.program_titleDays {*/
+/*  margin-right: auto;*/
+/*  margin-left: 200px;*/
+/*}*/
+
 .program_days-timeText {
   display: flex;
   gap: 16px;
-
   p:first-child {
     font-weight: 700;
   }
 
   p {
     font-size: clamp(14px, 5vw, 22px);
+  }
+}
+
+@media screen and (max-width: 1524px) {
+  .program_Days {
+    align-items: stretch;
+  }
+
+  .program_Days_card-text {
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+.program_Days_card {
+  grid-template-columns: 1fr;
+}
+  .transform_text {
+    transform: rotate(0);
+  }
+  .program_Days_card-day {
+    width: 140px;
+    height: 40px;
+    padding: 0;
+  }
+
+  .program_days-timeText {
+    flex-direction: column;
   }
 }
