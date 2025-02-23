@@ -60,9 +60,9 @@ class BaseButton extends HTMLElement {
         background-color: ${this.getAttribute("color") || "var(--color-black)"};
         border:1px solid  var(--color-yellow);
         border-radius: 10px;
-        cursor: pointer;
+        cursor: default;
         transition: all 0.4s ease;
-        width: ${this.getAttribute("size") || "100"}%;
+        width: ${this.handleWidth(`${this.getAttribute("size") || "100"}%;`)}
         max-height: ${this.getAttribute("size") || "100"}%;
         text-align: center;
       }
@@ -74,6 +74,11 @@ class BaseButton extends HTMLElement {
     `;
     shadow.appendChild(style);
     shadow.appendChild(button);
+  }
+  handleWidth(size) {
+    if (size === null) return size;
+    if (size.includes("px")) return `${size}px`;
+    return size;
   }
 }
 burgerMenu(document.getElementById("burgerIcon"));

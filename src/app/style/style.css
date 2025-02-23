@@ -4,14 +4,25 @@ body {
   /*max-width: 1920px;*/
 }
 
+html {
+  scrollbar-width: thin;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
+@font-face {
+  font-family: Inter;
+  src:
+    local('Gorizont'),
+    url('src/app/style/fonts/ALS Gorizont Variable.ttf') format('ttf');
+}
+
 .container {
   padding: 0 16px;
-  min-height: calc(100vh - 130px);
+  min-height: calc(100vh - 230px);
 }
 
 .divLink {
