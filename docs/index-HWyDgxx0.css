@@ -6,35 +6,36 @@ body {
 
 html {
   scrollbar-width: thin;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-@font-face {
-  font-family: Inter;
-  src:
-    local('Gorizont'),
-    url('src/app/style/fonts/ALS Gorizont Variable.ttf') format('ttf');
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  scrollbar-color: #000000 #222222;
 }
 
 .container {
-  padding: 0 16px;
-  min-height: calc(100vh - 230px);
+  padding: 0 clamp(16px, 5vw, 150px);
+  min-height: calc(100vh - 97px);
 }
 
-.divLink {
-  height: 100px;
+.container_left {
+  padding-left: clamp(16px, 5vw, 150px);
+}
+
+.section_greeting,
+.section_program,
+.section_program-twoBlocks,
+.section_program-threeBlocks,
+.section_partner {
+  margin-bottom: 50px;
+}
+
+.section_program-threeBlocks {
+  margin-bottom: 150px;
 }
 
 .section_title {
   font-size: clamp(24px, 5vw, 44px);
   font-weight: 600;
   color: var(--color-yellow);
-  padding: 16px;
-  margin-bottom: clamp(30px, 5vw, 60px);
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -289,12 +290,17 @@ table {
   }
 }
 
+.section_greeting {
+  background-image: url('./background_sheep-DtS3jq6I.png');
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: right top; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
 .greeting {
-  padding: 16px;
-  /*padding-top: 0;*/
   display: flex;
   flex-direction: column;
-  /*justify-content: center;*/
+  justify-content: center;
   gap: 32px;
 }
 
@@ -302,13 +308,10 @@ table {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  background-image: url('./background_sheep-DtS3jq6I.png');
-  background-size: cover; /* Заполняет весь блок, сохраняя пропорции */
-  background-position: center; /* Центрирует изображение */
-  background-repeat: no-repeat; /* Запрещает повторение изображения */
 }
 
-.greeting_titleText {
+.greeting_title-title,
+.greeting_title-date {
   font-size: clamp(28px, 5vw, 64px);
   font-weight: 600;
   color: var(--color-yellow);
@@ -318,97 +321,123 @@ table {
   }
 }
 
-.greeting_titleDate {
-  background-color: #222222;
-  padding: 16px;
-  width: 50%;
-  max-width: 440px;
-  display: flex;
-  align-items: center;
-}
-
-.greeting_titleText_subtitle {
+.greeting_title-subtitle {
+  margin-left: 55px;
   font-size: clamp(20px, 5vw, 25px);
   color: #787878;
 }
 
-.greeting_subtitle {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  .greeting_paragraph {
-    flex: 1;
-  }
+.greeting_title-date {
+  background-color: #222222;
+  max-width: 520px;
+  padding: 16px;
 }
 
-.greeting_paragraph {
+.greeting_subtitle {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 200px;
+}
+
+.greeting_paragraphGroup {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 16px;
+  gap: clamp(12px, 5vw, 16px);
   background-color: #222222;
-  padding: 16px;
-  min-height: 250px;
-}
-
-.greeting_paragraph_text {
-  font-size: clamp(14px, 10vw, 25px);
-}
-
-.greeting_icon {
-  min-width: 165px;
-  background-color: #222222;
-  min-height: 250px;
-  padding: 16px;
+  padding: 32px;
+  .greeting_paragraph {
+    font-size: clamp(12px, 5vw, 16px);
+  }
 }
 
 .greeting_valaam {
-  height: 250px;
+  display: grid;
+  place-content: center;
+  justify-content: center;
+  background-color: #222222;
+
+  img {
+    object-fit: cover;
+    max-height: 200px;
+  }
 }
 
-.greeting_buttonGroup {
+.greeting_buttons {
   display: flex;
-  align-items: center;
-  /*justify-content: space-between;*/
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 32px;
   width: 100%;
-
-  .button {
+  align-items: center;
+  .greeting_button {
     flex: 1;
   }
 }
 
-@media (max-width: 1280px) {
-  .greeting_icon {
+@media screen and (max-width: 1080px) {
+  .greeting_subtitle {
+    grid-template-columns: 1fr;
+  }
+  .greeting_valaam {
     display: none;
   }
 }
 
-@media (max-width: 728px) {
+.footer {
+  min-height: 162px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+  border-top: 1px solid #2f2f2e;
+  padding: 32px;
+  text-align: left;
 }
 
-.program {
-  background-image: url('./background_cerkov-CkZ34DC6.png');
-  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
-  background-position: top right; /* Центрирует изображение */
-  background-repeat: no-repeat; /* Запрещает повторение изображения */
-}
-
-.program_title {
+.footer_title {
   font-size: clamp(24px, 5vw, 44px);
   font-weight: 600;
   color: var(--color-yellow);
-  padding: 16px;
-  margin-bottom: clamp(30px, 5vw, 60px);
 }
+
+.footer_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer_contact {
+  text-decoration: none; /* Убираем подчеркивание */
+  font-size: clamp(14px, 5vw, 22px);
+  cursor: pointer;
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    justify-content: flex-start;
+  }
+}
+
+.section_program {
+  background-image: url('./background_cerkov-CkZ34DC6.png');
+  background-size: 40%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: right center; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
+.program {
+}
+
+/*Первый блок программы*/
 
 .program_days {
   max-width: 50%;
-  /*margin: 0 auto;*/
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  padding-top: clamp(32px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .program_day {
@@ -417,74 +446,75 @@ table {
   gap: 16px;
 }
 
-.program_day-one {
-  margin: 0 auto;
+.day_one {
+  grid-column: 2 /2;
+  grid-row: 1/1;
 }
 
-.program_day_button {
-  max-width: 140px;
+.day_two {
+  grid-column: 1 /1;
+  grid-row: 2/2;
 }
 
-.program_day_title {
+.day_three {
+  grid-column: 2 /2;
+  grid-row: 3/3;
+  margin-top: 50px;
+}
+
+.program_day-title {
   color: var(--color-yellow);
   font-weight: 500;
   font-size: clamp(14px, 5vw, 18px);
 }
 
-.section_programSub {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/*Второй блок программы*/
+
+.section_program-twoBlocks {
   background-image: url('./background_vera-BlqFITO6.png');
-  background-size: 40%; /* Заполняет весь блок, сохраняя пропорции */
-  background-position: left bottom; /* Центрирует изображение */
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: left center; /* Центрирует изображение */
   background-repeat: no-repeat; /* Запрещает повторение изображения */
 }
 
-.program_sub {
-  /*width: 100%;*/
-  display: flex;
-  flex-direction: column;
-  /*align-items: center;*/
-  gap: clamp(24px, 5vw, 48px);
+.program-twoBlock {
 }
 
-.program_sub-card {
-  margin: 0 auto;
-  max-width: 940px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.program-twoBlocks-list {
+  display: grid;
+  gap: clamp(16px, 5vw, 64px);
+  padding-top: clamp(32px, 5vw, 64px);
+}
+
+.program-twoBlocks-text {
   background-color: #222222;
-  padding-left: 16px;
-  min-height: 240px;
+  padding: 0 clamp(16px, 5vw, 32px) clamp(16px, 5vw, 32px);
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  p {
+    line-height: 2;
+    font-size: clamp(14px, 5vw, 24px);
+  }
 }
 
-.program_sub-text {
-  padding: 16px 48px;
-  line-height: 22px;
+/*Третий блок программы*/
+
+.section_program-threeBlocks {
+  background-image: url('./background_vera-BlqFITO6.png');
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: center right; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
 }
 
-.section_programDays {
-  /*display: flex;*/
-  /*align-items: center;*/
-  /*flex-direction: column;*/
+.program-threeBlocks {
 }
 
 .program_Days {
-  background-image: url('./background_vera-BlqFITO6.png');
-  background-size: 60%; /* Заполняет весь блок, сохраняя пропорции */
-  background-position: right; /* Центрирует изображение */
-  background-repeat: no-repeat; /* Запрещает повторение изображения */
+  margin-top: clamp(16px, 5vw, 64px);
   display: flex;
-  align-items: center;
   flex-direction: column;
   gap: 64px;
-}
-
-.program_titleDays {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr) 50px;
 }
 
 .program_Days_card {
@@ -551,6 +581,28 @@ table {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .program_days {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .day_one {
+    grid-column: 1 /1;
+    grid-row: 1/1;
+  }
+
+  .day_two {
+    grid-column: 1 /1;
+    grid-row: 2/2;
+  }
+
+  .day_three {
+    grid-column: 1 /1;
+    grid-row: 3/3;
+    margin-top: 50px;
+  }
+}
+
 @media screen and (max-width: 1524px) {
   .program_Days {
     align-items: stretch;
@@ -586,12 +638,13 @@ table {
 .partner_cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 16px;
+  padding-top: clamp(32px, 5vw, 64px);
 }
 
 .partner_card {
   min-height: 275px;
-  padding: 24px;
+  padding: clamp(16px, 5vw, 64px);
   text-align: left;
   background-color: #222222;
   display: grid;
@@ -644,6 +697,14 @@ table {
   display: flex;
   align-items: center;
   gap: 8px;
+
+  p {
+    white-space: nowrap;
+  }
+
+  img {
+    width: 20px;
+  }
 }
 
 .partner_info {
@@ -652,11 +713,11 @@ table {
   display: grid;
   place-items: center;
   background-color: #222222;
-  padding: 24px;
+  padding: clamp(16px, 5vw, 32px);
   p {
     color: var(--color-white);
     text-align: left;
-    font-size: clamp(24px, 5vw, 44px);
+    font-size: clamp(24px, 5vw, 32px);
     line-height: 1.4;
     font-weight: 300;
   }
@@ -668,58 +729,31 @@ table {
   }
 }
 
-.footer {
-  min-height: 162px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 32px;
-  align-items: flex-start;
-  border-top: 1px solid #2f2f2e;
-  padding: 32px;
-  text-align: left;
-}
-
-.footer_title {
-  font-size: clamp(24px, 5vw, 44px);
-  font-weight: 600;
-  color: var(--color-yellow);
-}
-
-.footer_contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.footer_contact {
-  text-decoration: none; /* Убираем подчеркивание */
-  font-size: clamp(14px, 5vw, 22px);
-  cursor: pointer;
-  color: var(--color-white);
-}
-
-@media (max-width: 768px) {
-  .footer {
-    justify-content: flex-start;
-  }
-}
-
 :root {
-  font-family: Gorizont, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  /*color: rgba(255, 255, 255, 0.87);*/
   background-color: #000000;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+  color: #ffffff;
   --color-white: #ffffff;
   --color-yellow: #fffbb7;
   --color-black: #000000;
+}
+
+@font-face {
+  font-family: 'ALS Gorizont Variable';
+  src: url('./ALS%20Gorizont%20Variable-CZKebLNq.ttf') format('truetype');
+}
+
+@supports (font-variation-settings: normal) {
+  body {
+    font-family:
+      ALS Gorizont Variable,
+      sans-serif;
+  }
+}
+
+body {
+  font-family:
+    ALS Gorizont Variable,
+    sans-serif;
+  line-height: 1.2;
 }

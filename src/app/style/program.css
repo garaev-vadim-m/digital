@@ -1,24 +1,22 @@
-.program {
+.section_program {
   background-image: url('../image/background/background_cerkov.png');
-  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
-  background-position: top right; /* Центрирует изображение */
+  background-size: 40%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: right center; /* Центрирует изображение */
   background-repeat: no-repeat; /* Запрещает повторение изображения */
 }
 
-.program_title {
-  font-size: clamp(24px, 5vw, 44px);
-  font-weight: 600;
-  color: var(--color-yellow);
-  padding: 16px;
-  margin-bottom: clamp(30px, 5vw, 60px);
+.program {
 }
+
+/*Первый блок программы*/
 
 .program_days {
   max-width: 50%;
-  /*margin: 0 auto;*/
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  padding-top: clamp(32px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .program_day {
@@ -27,74 +25,73 @@
   gap: 16px;
 }
 
-.program_day-one {
-  margin: 0 auto;
+.day_one {
+  grid-column: 2 /2;
+  grid-row: 1/1;
 }
 
-.program_day_button {
-  max-width: 140px;
+.day_two {
+  grid-column: 1 /1;
+  grid-row: 2/2;
 }
 
-.program_day_title {
+.day_three {
+  grid-column: 2 /2;
+  grid-row: 3/3;
+  margin-top: 50px;
+}
+
+.program_day-title {
   color: var(--color-yellow);
   font-weight: 500;
   font-size: clamp(14px, 5vw, 18px);
 }
 
-.section_programSub {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/*Второй блок программы*/
+.section_program-twoBlocks {
   background-image: url('../image/background/background_vera.png');
-  background-size: 40%; /* Заполняет весь блок, сохраняя пропорции */
-  background-position: left bottom; /* Центрирует изображение */
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: left center; /* Центрирует изображение */
   background-repeat: no-repeat; /* Запрещает повторение изображения */
 }
 
-.program_sub {
-  /*width: 100%;*/
-  display: flex;
-  flex-direction: column;
-  /*align-items: center;*/
-  gap: clamp(24px, 5vw, 48px);
+.program-twoBlock {
 }
 
-.program_sub-card {
-  margin: 0 auto;
-  max-width: 940px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.program-twoBlocks-list {
+  display: grid;
+  gap: clamp(16px, 5vw, 64px);
+  padding-top: clamp(32px, 5vw, 64px);
+}
+
+.program-twoBlocks-text {
   background-color: #222222;
-  padding-left: 16px;
-  min-height: 240px;
+  padding: 0 clamp(16px, 5vw, 32px) clamp(16px, 5vw, 32px);
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  p {
+    line-height: 2;
+    font-size: clamp(14px, 5vw, 24px);
+  }
 }
 
-.program_sub-text {
-  padding: 16px 48px;
-  line-height: 22px;
-}
+/*Третий блок программы*/
 
-.section_programDays {
-  /*display: flex;*/
-  /*align-items: center;*/
-  /*flex-direction: column;*/
+.section_program-threeBlocks {
+  background-image: url('../image/background/background_vera.png');
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: center right; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+.program-threeBlocks {
 }
 
 .program_Days {
-  background-image: url('../image/background/background_vera.png');
-  background-size: 60%; /* Заполняет весь блок, сохраняя пропорции */
-  background-position: right; /* Центрирует изображение */
-  background-repeat: no-repeat; /* Запрещает повторение изображения */
+  margin-top: clamp(16px, 5vw, 64px);
   display: flex;
-  align-items: center;
   flex-direction: column;
   gap: 64px;
-}
-
-.program_titleDays {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr) 50px;
 }
 
 .program_Days_card {
@@ -155,6 +152,28 @@
 
   p {
     font-size: clamp(14px, 5vw, 22px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .program_days {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .day_one {
+    grid-column: 1 /1;
+    grid-row: 1/1;
+  }
+
+  .day_two {
+    grid-column: 1 /1;
+    grid-row: 2/2;
+  }
+
+  .day_three {
+    grid-column: 1 /1;
+    grid-row: 3/3;
+    margin-top: 50px;
   }
 }
 

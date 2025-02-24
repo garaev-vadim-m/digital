@@ -5,12 +5,13 @@
 .partner_cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 16px;
+  padding-top: clamp(32px, 5vw, 64px);
 }
 
 .partner_card {
   min-height: 275px;
-  padding: 24px;
+  padding: clamp(16px, 5vw, 64px);
   text-align: left;
   background-color: #222222;
   display: grid;
@@ -63,6 +64,14 @@
   display: flex;
   align-items: center;
   gap: 8px;
+
+  p {
+    white-space: nowrap;
+  }
+
+  img {
+    width: 20px;
+  }
 }
 
 .partner_info {
@@ -71,11 +80,11 @@
   display: grid;
   place-items: center;
   background-color: #222222;
-  padding: 24px;
+  padding: clamp(16px, 5vw, 32px);
   p {
     color: var(--color-white);
     text-align: left;
-    font-size: clamp(24px, 5vw, 44px);
+    font-size: clamp(24px, 5vw, 32px);
     line-height: 1.4;
     font-weight: 300;
   }
