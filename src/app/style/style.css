@@ -8,31 +8,11 @@ html {
   scrollbar-width: thin;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-@font-face {
-  font-family: Inter;
-  src:
-    local('Gorizont'),
-    url('src/app/style/fonts/ALS Gorizont Variable.ttf') format('ttf');
-}
-
 .container {
-  padding: 0 16px;
-  min-height: calc(100vh - 230px);
+  padding: 0 clamp(16px, 5vw, 150px);
+  min-height: calc(100vh - 97px);
 }
 
-.divLink {
-  height: 100px;
-}
-
-.section_title {
-  font-size: clamp(24px, 5vw, 44px);
-  font-weight: 600;
-  color: var(--color-yellow);
-  padding: 16px;
-  margin-bottom: clamp(30px, 5vw, 60px);
+.container_left {
+  padding-left: clamp(16px, 5vw, 150px);
 }
