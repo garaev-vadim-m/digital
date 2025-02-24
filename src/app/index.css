@@ -4,7 +4,7 @@
 @import './style/greeting.css';
 @import './style/footer.css';
 @import './style/program.css';
-/*@import './style/partner.css';*/
+@import './style/partner.css';
 
 :root {
   background-color: #000000;

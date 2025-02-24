@@ -23,8 +23,13 @@ html {
 .section_greeting,
 .section_program,
 .section_program-twoBlocks,
-.section_program-threeBlocks {
+.section_program-threeBlocks,
+.section_partner {
   margin-bottom: 50px;
+}
+
+.section_program-threeBlocks {
+  margin-bottom: 150px;
 }
 
 .section_title {
@@ -488,7 +493,8 @@ table {
   gap: 24px;
   flex-direction: column;
   p {
-    font-size: clamp(14px, 5vw, 18px);
+    line-height: 2;
+    font-size: clamp(14px, 5vw, 24px);
   }
 }
 
@@ -625,7 +631,103 @@ table {
   }
 }
 
-/*@import './style/partner.css';*/
+.partner {
+  text-align: center;
+}
+
+.partner_cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding-top: clamp(32px, 5vw, 64px);
+}
+
+.partner_card {
+  min-height: 275px;
+  padding: clamp(16px, 5vw, 64px);
+  text-align: left;
+  background-color: #222222;
+  display: grid;
+  place-items: center;
+
+  .partner_cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+}
+
+.partner_buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: clamp(14px, 5vw, 22px);
+  justify-content: flex-end;
+}
+
+.partner_title {
+  font-size: clamp(18px, 5vw, 28px);
+  line-height: 1.4;
+}
+
+.partner_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style-type: disc; /* Маркер в виде кружка */
+  padding-left: 20px; /* Отступ слева для списка */
+  li {
+    font-size: clamp(14px, 5vw, 22px);
+  }
+}
+
+.partner_list {
+  list-style-type: disc; /* Маркер в виде кружка */
+  padding-left: 20px; /* Отступ слева для списка */
+}
+
+.partner_list li::marker {
+  color: var(--color-yellow); /* Цвет маркера */
+  font-size: 1.2em; /* Размер маркера */
+}
+
+.partner_billet {
+  font-size: clamp(10px, 5vw, 18px);
+  color: var(--color-yellow);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  p {
+    white-space: nowrap;
+  }
+
+  img {
+    width: 20px;
+  }
+}
+
+.partner_info {
+  margin-top: 50px;
+  min-height: 140px;
+  display: grid;
+  place-items: center;
+  background-color: #222222;
+  padding: clamp(16px, 5vw, 32px);
+  p {
+    color: var(--color-white);
+    text-align: left;
+    font-size: clamp(24px, 5vw, 32px);
+    line-height: 1.4;
+    font-weight: 300;
+  }
+}
+
+@media (max-width: 768px) {
+  .partner_cards {
+    grid-template-columns: 1fr;
+  }
+}
 
 :root {
   background-color: #000000;

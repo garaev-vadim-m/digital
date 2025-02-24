@@ -23,8 +23,13 @@ html {
 .section_greeting,
 .section_program,
 .section_program-twoBlocks,
-.section_program-threeBlocks {
+.section_program-threeBlocks,
+.section_partner {
   margin-bottom: 50px;
+}
+
+.section_program-threeBlocks {
+  margin-bottom: 150px;
 }
 
 .section_title {

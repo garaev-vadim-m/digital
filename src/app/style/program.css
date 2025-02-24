@@ -71,7 +71,8 @@
   gap: 24px;
   flex-direction: column;
   p {
-    font-size: clamp(14px, 5vw, 18px);
+    line-height: 2;
+    font-size: clamp(14px, 5vw, 24px);
   }
 }
 
