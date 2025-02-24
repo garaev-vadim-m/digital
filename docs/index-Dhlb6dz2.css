@@ -8,6 +8,7 @@ html {
   scrollbar-width: thin;
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  scrollbar-color: #000000 #222222;
 }
 
 .container {
@@ -20,7 +21,9 @@ html {
 }
 
 .section_greeting,
-.section_program {
+.section_program,
+.section_program-twoBlocks,
+.section_program-threeBlocks {
   margin-bottom: 50px;
 }
 
@@ -421,6 +424,8 @@ table {
 .program {
 }
 
+/*Первый блок программы*/
+
 .program_days {
   max-width: 50%;
   padding-top: clamp(32px, 5vw, 64px);
@@ -458,6 +463,118 @@ table {
   font-size: clamp(14px, 5vw, 18px);
 }
 
+/*Второй блок программы*/
+
+.section_program-twoBlocks {
+  background-image: url('./background_vera-BlqFITO6.png');
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: left center; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
+.program-twoBlock {
+}
+
+.program-twoBlocks-list {
+  display: grid;
+  gap: clamp(16px, 5vw, 64px);
+  padding-top: clamp(32px, 5vw, 64px);
+}
+
+.program-twoBlocks-text {
+  background-color: #222222;
+  padding: 0 clamp(16px, 5vw, 32px) clamp(16px, 5vw, 32px);
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  p {
+    font-size: clamp(14px, 5vw, 18px);
+  }
+}
+
+/*Третий блок программы*/
+
+.section_program-threeBlocks {
+  background-image: url('./background_vera-BlqFITO6.png');
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: center right; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
+.program-threeBlocks {
+}
+
+.program_Days {
+  margin-top: clamp(16px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.program_Days_card {
+  min-height: 140px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 64px;
+}
+
+.program_Days_card-day {
+  width: 40px;
+  height: 100%;
+  border: 1px solid var(--color-yellow);
+  padding: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--color-black);
+  transition: all 0.4s ease;
+  cursor: default;
+  &:hover {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+  }
+}
+
+.transform_text {
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  font-size: clamp(24px, 5vw, 32px);
+}
+
+.program_Days_card-text {
+  flex: 1;
+  min-width: 1300px;
+  height: 100%;
+  background-color: #222222;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+/*.program_titleDays {*/
+
+/*  margin-right: auto;*/
+
+/*  margin-left: 200px;*/
+
+/*}*/
+
+.program_days-timeText {
+  display: flex;
+  gap: 16px;
+  p:first-child {
+    font-weight: 700;
+  }
+
+  p {
+    font-size: clamp(14px, 5vw, 22px);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .program_days {
     grid-template-columns: 1fr;
@@ -477,6 +594,34 @@ table {
     grid-column: 1 /1;
     grid-row: 3/3;
     margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 1524px) {
+  .program_Days {
+    align-items: stretch;
+  }
+
+  .program_Days_card-text {
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .program_Days_card {
+    grid-template-columns: 1fr;
+  }
+  .transform_text {
+    transform: rotate(0);
+  }
+  .program_Days_card-day {
+    width: 140px;
+    height: 40px;
+    padding: 0;
+  }
+
+  .program_days-timeText {
+    flex-direction: column;
   }
 }
 

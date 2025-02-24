@@ -22,7 +22,8 @@ html {
 
 .section_greeting,
 .section_program,
-.section_program-twoBlocks {
+.section_program-twoBlocks,
+.section_program-threeBlocks {
   margin-bottom: 50px;
 }
 
