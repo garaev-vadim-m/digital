@@ -8,6 +8,8 @@
 .program {
 }
 
+/*Первый блок программы*/
+
 .program_days {
   max-width: 50%;
   padding-top: clamp(32px, 5vw, 64px);
@@ -45,6 +47,34 @@
   font-size: clamp(14px, 5vw, 18px);
 }
 
+/*Второй блок программы*/
+.section_program-twoBlocks {
+  background-image: url('../image/background/background_vera.png');
+  background-size: 50%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: left center; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
+.program-twoBlock {
+}
+
+.program-twoBlocks-list {
+  display: grid;
+  gap: clamp(16px, 5vw, 64px);
+  padding-top: clamp(32px, 5vw, 64px);
+}
+
+.program-twoBlocks-text {
+  background-color: #222222;
+  padding: 0 clamp(16px, 5vw, 32px) clamp(16px, 5vw, 32px);
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  p {
+    font-size: clamp(14px, 5vw, 18px);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .program_days {
     grid-template-columns: 1fr;
@@ -64,5 +94,14 @@
     grid-column: 1 /1;
     grid-row: 3/3;
     margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .program-twoBlocks-card {
+    /*grid-template-columns: 1fr;*/
+  }
+  .transform_text {
+    transform: rotate(0);
   }
 }

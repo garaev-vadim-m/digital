@@ -8,6 +8,7 @@ html {
   scrollbar-width: thin;
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  scrollbar-color: #000000 #222222;
 }
 
 .container {
@@ -20,7 +21,8 @@ html {
 }
 
 .section_greeting,
-.section_program {
+.section_program,
+.section_program-twoBlocks {
   margin-bottom: 50px;
 }
 
