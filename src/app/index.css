@@ -3,7 +3,7 @@
 @import './style/header.css';
 @import './style/greeting.css';
 @import './style/footer.css';
-/*@import './style/program.css';*/
+@import './style/program.css';
 /*@import './style/partner.css';*/
 
 :root {

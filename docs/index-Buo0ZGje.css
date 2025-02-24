@@ -6,6 +6,8 @@ body {
 
 html {
   scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 .container {
@@ -15,6 +17,17 @@ html {
 
 .container_left {
   padding-left: clamp(16px, 5vw, 150px);
+}
+
+.section_greeting,
+.section_program {
+  margin-bottom: 50px;
+}
+
+.section_title {
+  font-size: clamp(24px, 5vw, 44px);
+  font-weight: 600;
+  color: var(--color-yellow);
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -321,7 +334,7 @@ table {
 .greeting_paragraphGroup {
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 5vw, 32px);
+  gap: clamp(12px, 5vw, 16px);
   background-color: #222222;
   padding: 32px;
   .greeting_paragraph {
@@ -337,7 +350,18 @@ table {
 
   img {
     object-fit: cover;
-    max-height: 243px;
+    max-height: 200px;
+  }
+}
+
+.greeting_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
+  align-items: center;
+  .greeting_button {
+    flex: 1;
   }
 }
 
@@ -387,7 +411,74 @@ table {
   }
 }
 
-/*@import './style/program.css';*/
+.section_program {
+  background-image: url('./background_cerkov-CkZ34DC6.png');
+  background-size: 40%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: right center; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
+.program {
+}
+
+.program_days {
+  max-width: 50%;
+  padding-top: clamp(32px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.program_day {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.day_one {
+  grid-column: 2 /2;
+  grid-row: 1/1;
+}
+
+.day_two {
+  grid-column: 1 /1;
+  grid-row: 2/2;
+}
+
+.day_three {
+  grid-column: 2 /2;
+  grid-row: 3/3;
+  margin-top: 50px;
+}
+
+.program_day-title {
+  color: var(--color-yellow);
+  font-weight: 500;
+  font-size: clamp(14px, 5vw, 18px);
+}
+
+@media screen and (max-width: 768px) {
+  .program_days {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .day_one {
+    grid-column: 1 /1;
+    grid-row: 1/1;
+  }
+
+  .day_two {
+    grid-column: 1 /1;
+    grid-row: 2/2;
+  }
+
+  .day_three {
+    grid-column: 1 /1;
+    grid-row: 3/3;
+    margin-top: 50px;
+  }
+}
 
 /*@import './style/partner.css';*/
 

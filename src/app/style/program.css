@@ -1,0 +1,68 @@
+.section_program {
+  background-image: url('../image/background/background_cerkov.png');
+  background-size: 40%; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: right center; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
+}
+
+.program {
+}
+
+.program_days {
+  max-width: 50%;
+  padding-top: clamp(32px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.program_day {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.day_one {
+  grid-column: 2 /2;
+  grid-row: 1/1;
+}
+
+.day_two {
+  grid-column: 1 /1;
+  grid-row: 2/2;
+}
+
+.day_three {
+  grid-column: 2 /2;
+  grid-row: 3/3;
+  margin-top: 50px;
+}
+
+.program_day-title {
+  color: var(--color-yellow);
+  font-weight: 500;
+  font-size: clamp(14px, 5vw, 18px);
+}
+
+@media screen and (max-width: 768px) {
+  .program_days {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .day_one {
+    grid-column: 1 /1;
+    grid-row: 1/1;
+  }
+
+  .day_two {
+    grid-column: 1 /1;
+    grid-row: 2/2;
+  }
+
+  .day_three {
+    grid-column: 1 /1;
+    grid-row: 3/3;
+    margin-top: 50px;
+  }
+}
