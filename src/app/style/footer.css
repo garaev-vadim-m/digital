@@ -1,13 +1,14 @@
 .footer {
   min-height: 162px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 32px;
   align-items: flex-start;
-  border-top: 1px solid #2f2f2e;
-  padding: 32px;
+  border-top: 1px solid #ffffff80;
+  padding: 32px clamp(16px, 5vw, 120px);
   text-align: left;
+  font-weight: 200;
 }
 
 .footer_title {
@@ -32,5 +33,12 @@
 @media (max-width: 768px) {
   .footer {
     justify-content: flex-start;
+  }
+  .footer_contacts {
+    gap: 8px;
+  }
+
+  .footer_contact {
+    font-size: 14px;
   }
 }
