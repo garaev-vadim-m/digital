@@ -331,6 +331,7 @@ table {
   background-color: #222222;
   max-width: 520px;
   padding: 16px;
+  text-align: center;
 }
 
 .greeting_subtitle {
@@ -382,16 +383,26 @@ table {
   }
 }
 
+@media screen and (max-width: 786px) {
+  .greeting {
+    margin-top: 50px;
+  }
+  .greeting_buttons {
+    gap: 8px;
+  }
+}
+
 .footer {
   min-height: 162px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 32px;
   align-items: flex-start;
-  border-top: 1px solid #2f2f2e;
-  padding: 32px;
+  border-top: 1px solid #ffffff80;
+  padding: 32px clamp(16px, 5vw, 120px);
   text-align: left;
+  font-weight: 200;
 }
 
 .footer_title {
@@ -417,6 +428,13 @@ table {
   .footer {
     justify-content: flex-start;
   }
+  .footer_contacts {
+    gap: 8px;
+  }
+
+  .footer_contact {
+    font-size: 14px;
+  }
 }
 
 .section_program {
@@ -427,17 +445,24 @@ table {
 }
 
 .program {
+  padding: 0 clamp(16px, 5vw, 150px);
+  min-height: calc(100vh - 97px);
 }
 
 /*Первый блок программы*/
 
 .program_days {
-  max-width: 50%;
+  max-width: 100%;
   padding-top: clamp(32px, 5vw, 64px);
-  display: grid;
-  grid-template-columns: repeat(2, 400px);
-  grid-template-rows: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 32px;
+  margin-left: 15%;
+  margin-top: 80px;
+  background-image: url('./icon_line_bold-BV3hWGPa.png');
+  background-size: contain; /* Заполняет весь блок, сохраняя пропорции */
+  background-position: left bottom; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Запрещает повторение изображения */
 }
 
 .program_day {
@@ -447,19 +472,31 @@ table {
 }
 
 .day_one {
-  grid-column: 2 /2;
-  grid-row: 1/1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: 390px;
 }
 
 .day_two {
-  grid-column: 1 /1;
-  grid-row: 2/2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: -40px;
+}
+
+.day_two-paragraph {
+  margin-left: 110px;
 }
 
 .day_three {
-  grid-column: 2 /2;
-  grid-row: 3/3;
-  margin-top: 50px;
+  margin-top: 150px;
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
 .program_day-title {
@@ -493,7 +530,7 @@ table {
   gap: 24px;
   flex-direction: column;
   p {
-    line-height: 2;
+    line-height: 1.4;
     font-size: clamp(14px, 5vw, 24px);
   }
 }
@@ -561,19 +598,12 @@ table {
   justify-content: center;
 }
 
-/*.program_titleDays {*/
-
-/*  margin-right: auto;*/
-
-/*  margin-left: 200px;*/
-
-/*}*/
-
 .program_days-timeText {
   display: flex;
   gap: 16px;
   p:first-child {
     font-weight: 700;
+    color: var(--color-yellow);
   }
 
   p {
@@ -581,33 +611,65 @@ table {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .program_days {
-    grid-template-columns: 1fr;
-    max-width: 100%;
+    padding-top: 0;
+    margin-top: 50px;
+    margin-left: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAjiCAYAAACv/aM2AAAACXBIWXMAAC4jAAAuIwF4pT92AAACDUlEQVR4nO3XsU1CYRiF4QPY6waOICNQUjKCozmCnW4hjsAG0mt+C8ACFb8v0cSE509oLg/cExruOxljJG+P8yR3SW6yO5skq8yW6ySZjNeHeZKnfD7bJIvMlutpkvsvQJJc7r890yTX36Acbj89AT4OBEEQBEFd9Hzi/c0B3Wb39358tklWO7R7QFgcPrU/z9k/EyRJxhjHr8Xxtf/6O0EQBEG/iC6SaE4IgiAIOgukOSEIgiDNWR0OQRAEQVAXaU4IgiBIc1aHQxAEQRDURZoTgiAI0pzV4RAEQRAEdZHmhCAIgjRndTgEQRAEQV2kOSEIgiDNWR0OQRAEQVAXaU4IgiBIc1aHQxAEQRDURZoTgiAI0pzV4RAEQRAEdZHmhCAIgjRndTgEQRAEQV2kOSEIgiDNWR0OQRAEQVAXaU4IgiBIc1aHQxAEQRDURZoTgiAI0pzV4RAEQRAEdZHmhCAIgjRndTgEQRAEQV2kOSEIgiDNWR0OQRAEQVAXaU4IgiBIc1aHQxAEQRDURZoTgiAI0pzV4RAEQRAEdZHmhCAIgjRndTgEQRAEQV2kOSEIgiDNWR0OQRAEQVAXaU4IgiBIc1aHQxAEQRDURZoTgiAI0pzV4RAEQRAEdZHmhCAIgjRndTgEQRAEQV2kOSEIgiDNWR0OQRAEQVAXac5zR5MxxvG1qyQvP6E/3FRC79nxdukOWNTTAAAAAElFTkSuQmCC');
+    background-size: contain; /* Заполняет весь блок, сохраняя пропорции */
+    background-position: left; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Запрещает повторение изображения */
   }
   .day_one {
-    grid-column: 1 /1;
-    grid-row: 1/1;
+    margin-left: 10px;
   }
 
   .day_two {
-    grid-column: 1 /1;
-    grid-row: 2/2;
+    margin-left: 10px;
+  }
+  .day_two-paragraph {
+    margin-left: 0;
+  }
+  .day_three {
+    margin-top: 0;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .program {
+    margin-top: 60px;
+    min-height: calc(100vh - 200px);
+  }
+  .program_days {
+    max-width: 100%;
+    margin-top: 50px;
   }
 
-  .day_three {
-    grid-column: 1 /1;
-    grid-row: 3/3;
-    margin-top: 50px;
+  .program-twoBlocks-text {
+    p {
+      line-height: 1.4;
+      font-weight: 200;
+      font-size: 14px;
+    }
+  }
+
+  .program_days-timeText {
+    gap: 4px;
+    p:nth-child(2) {
+      font-weight: 200;
+      font-size: 14px;
+    }
   }
 }
 
 @media screen and (max-width: 1524px) {
-  .program_Days {
-    align-items: stretch;
-  }
-
   .program_Days_card-text {
     min-width: 0;
   }
@@ -616,6 +678,7 @@ table {
 @media screen and (max-width: 1024px) {
   .program_Days_card {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   .transform_text {
     transform: rotate(0);
@@ -663,10 +726,12 @@ table {
   gap: 16px;
   font-size: clamp(14px, 5vw, 22px);
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .partner_title {
-  font-size: clamp(18px, 5vw, 28px);
+  font-size: clamp(30px, 5vw, 30px);
+  font-weight: 600;
   line-height: 1.4;
 }
 
@@ -678,6 +743,7 @@ table {
   padding-left: 20px; /* Отступ слева для списка */
   li {
     font-size: clamp(14px, 5vw, 22px);
+    font-weight: 100;
   }
 }
 
@@ -712,14 +778,15 @@ table {
   min-height: 140px;
   display: grid;
   place-items: center;
-  background-color: #222222;
+  /* background-color: #222222; */
+  /* border: 1px solid var(--color-yellow); */
   padding: clamp(16px, 5vw, 32px);
   p {
     color: var(--color-white);
     text-align: left;
-    font-size: clamp(24px, 5vw, 32px);
+    font-size: clamp(14px, 5vw, 32px);
     line-height: 1.4;
-    font-weight: 300;
+    font-weight: 400;
   }
 }
 
@@ -727,11 +794,17 @@ table {
   .partner_cards {
     grid-template-columns: 1fr;
   }
+
+  .partner_info {
+    p {
+      font-size: 14px;
+    }
+  }
 }
 
 :root {
   background-color: #000000;
-
+  font-weight: 200;
   color: #ffffff;
   --color-white: #ffffff;
   --color-yellow: #fffbb7;

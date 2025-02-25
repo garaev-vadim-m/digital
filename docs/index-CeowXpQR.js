@@ -66,6 +66,9 @@ class BaseButton extends HTMLElement {
         width: ${this.handleWidth(`${this.getAttribute("size") || "100"}%;`)}
         max-height: ${this.handleWidth(`${this.getAttribute("height") || "100"}%;`)}
         text-align: center;
+            font-family:
+      ALS Gorizont Variable,
+      sans-serif;
       }
 
       button:hover {
