@@ -39,6 +39,7 @@
   background-color: #222222;
   max-width: 520px;
   padding: 16px;
+  text-align: center;
 }
 
 .greeting_subtitle {
@@ -87,5 +88,14 @@
   }
   .greeting_valaam {
     display: none;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .greeting {
+    margin-top: 50px;
+  }
+  .greeting_buttons {
+    gap: 8px;
   }
 }
