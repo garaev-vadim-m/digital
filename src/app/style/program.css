@@ -175,7 +175,7 @@
     padding-top: 0;
     margin-top: 50px;
     margin-left: 0;
-    background-image: url('../image/icon/icon_line_vertical.png');
+    background-image: url('../image/icon/icon_thing.png');
     background-size: contain; /* Заполняет весь блок, сохраняя пропорции */
     background-position: left; /* Центрирует изображение */
     background-repeat: no-repeat; /* Запрещает повторение изображения */
