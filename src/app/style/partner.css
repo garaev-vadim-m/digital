@@ -88,7 +88,7 @@
   p {
     color: var(--color-white);
     text-align: left;
-    font-size: clamp(14px, 5vw, 32px);
+    font-size: clamp(20px, 5vw, 30px);
     line-height: 1.4;
     font-weight: 400;
   }
@@ -100,8 +100,15 @@
   }
 
   .partner_info {
+    padding: 0;
     p {
-      font-size: 14px;
+      /* font-size: 14px; */
     }
+  }
+
+  .partner_buttonGroup {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 }

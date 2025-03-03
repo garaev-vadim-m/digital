@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /*max-width: 1920px;*/
 }
 
@@ -22,10 +22,13 @@ html {
 
 .section_greeting,
 .section_program,
-.section_program-twoBlocks,
 .section_program-threeBlocks,
 .section_partner {
   margin-bottom: 50px;
+}
+
+.section_program-twoBlocks {
+  margin-bottom: 20px;
 }
 
 .section_program-threeBlocks {
@@ -36,6 +39,10 @@ html {
   font-size: clamp(24px, 5vw, 44px);
   font-weight: 600;
   color: var(--color-yellow);
+}
+
+.noWrap {
+  white-space: nowrap;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -310,6 +317,12 @@ table {
   gap: 24px;
 }
 
+.greeting_day-title {
+  color: var(--color-yellow);
+  font-weight: 500;
+  font-size: clamp(14px, 5vw, 18px);
+}
+
 .greeting_title-title,
 .greeting_title-date {
   font-size: clamp(28px, 5vw, 64px);
@@ -352,18 +365,23 @@ table {
     font-size: clamp(12px, 5vw, 16px);
   }
 
-  .greeting_block {
+  span {
+    white-space: nowrap;
+  }
+
+  .greeting_block,
+  .greeting_block-group {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: clamp(14px, 5vw, 16px);
+    gap: clamp(16px, 5vw, 32px);
   }
 }
 
 .greeting_paragraphTitle {
   color: var(--color-yellow);
   font-weight: 500;
-  font-size: clamp(14px, 5vw, 32px);
+  font-size: clamp(25px, 5vw, 32px);
 }
 
 .greeting_line {
@@ -379,7 +397,7 @@ table {
 .greeting_block-text {
   display: grid;
   grid-template-columns: 100px 1fr;
-  gap: clamp(8px, 5vw, 32px);
+  gap: 40px;
   padding: 16px;
   align-items: center;
 }
@@ -393,13 +411,13 @@ table {
 .greeting_block-list {
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 5vw, 32px);
+  gap: clamp(8px, 5vw, 24px);
 }
 
 .greeting_block-buttonGroup {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px;
   /* justify-content: space-between; */
 
   button {
@@ -448,6 +466,10 @@ table {
   }
 }
 
+.greeting_partner {
+  display: none;
+}
+
 @media screen and (max-width: 1080px) {
   .greeting_subtitle {
     grid-template-columns: 1fr;
@@ -459,10 +481,40 @@ table {
 
 @media screen and (max-width: 786px) {
   .greeting {
-    margin-top: 50px;
+    padding-top: 200px;
   }
   .greeting_buttons {
     gap: 8px;
+  }
+
+  .greeting_partner {
+    display: inline;
+  }
+
+  .button_visible {
+    display: none;
+  }
+
+  .greeting_paragraphGroup {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .greeting_block {
+    background-color: #222222;
+    padding: 16px 8px;
+  }
+
+  .greeting_title-title {
+    display: none;
+  }
+  .greeting_title-subtitle {
+    margin-left: 0;
+  }
+
+  .section_greeting {
+    background-size: 100%; /* Заполняет весь блок, сохраняя пропорции */
+    background-position: left top; /* Центрирует изображение */
   }
 }
 
@@ -471,7 +523,16 @@ table {
     border-right: none;
   }
   .greeting_block-text {
+    padding: 8px;
     grid-template-columns: 50px 1fr;
+  }
+
+  .greeting_day-title,
+  .greeting_block-list {
+    margin-left: 6px;
+  }
+
+  .greeting_block-list {
   }
 }
 
@@ -489,7 +550,7 @@ table {
 }
 
 .footer_title {
-  font-size: clamp(24px, 5vw, 44px);
+  font-size: clamp(20px, 5vw, 44px);
   font-weight: 600;
   color: var(--color-yellow);
 }
@@ -510,6 +571,8 @@ table {
 @media (max-width: 768px) {
   .footer {
     justify-content: flex-start;
+    gap: 0;
+    min-height: 130px;
   }
   .footer_contacts {
     gap: 8px;
@@ -603,14 +666,14 @@ table {
 .program-twoBlocks-list {
   display: grid;
   gap: clamp(16px, 5vw, 64px);
-  padding-top: clamp(32px, 5vw, 64px);
+  padding-top: clamp(16px, 5vw, 64px);
 }
 
 .program-twoBlocks-text {
   background-color: #222222;
   padding: 0 clamp(16px, 5vw, 32px) clamp(16px, 5vw, 32px);
   display: flex;
-  gap: 24px;
+  gap: clamp(8px, 5vw, 24px);
   flex-direction: column;
   p {
     line-height: 1.4;
@@ -705,18 +768,18 @@ table {
     background-repeat: no-repeat; /* Запрещает повторение изображения */
   }
   .day_one {
-    margin-left: 10px;
+    margin-left: 30px;
   }
 
   .day_two {
-    margin-left: 10px;
+    margin-left: 30px;
   }
   .day_two-paragraph {
     margin-left: 0;
   }
   .day_three {
     margin-top: 0;
-    margin-left: 10px;
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -732,10 +795,11 @@ table {
   }
   .program_days {
     max-width: 100%;
-    margin-top: 50px;
+    margin-top: 25px;
   }
 
   .program-twoBlocks-text {
+    padding-top: 16px;
     p {
       line-height: 1.4;
       font-weight: 200;
@@ -749,6 +813,21 @@ table {
       font-weight: 200;
       font-size: 14px;
     }
+  }
+
+  .section_program {
+    background-size: 75%; /* Заполняет весь блок, сохраняя пропорции */
+    background-position: right top; /* Центрирует изображение */
+  }
+
+  .program_day-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .program-twoBlocks-list {
+    padding-top: 0;
   }
 }
 
@@ -867,7 +946,7 @@ table {
   p {
     color: var(--color-white);
     text-align: left;
-    font-size: clamp(14px, 5vw, 32px);
+    font-size: clamp(20px, 5vw, 30px);
     line-height: 1.4;
     font-weight: 400;
   }
@@ -879,9 +958,16 @@ table {
   }
 
   .partner_info {
+    padding: 0;
     p {
-      font-size: 14px;
+      /* font-size: 14px; */
     }
+  }
+
+  .partner_buttonGroup {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 }
 

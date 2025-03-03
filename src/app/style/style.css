@@ -1,6 +1,6 @@
 body {
   margin: 0 auto;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /*max-width: 1920px;*/
 }
 
@@ -22,10 +22,13 @@ html {
 
 .section_greeting,
 .section_program,
-.section_program-twoBlocks,
 .section_program-threeBlocks,
 .section_partner {
   margin-bottom: 50px;
+}
+
+.section_program-twoBlocks {
+  margin-bottom: 20px;
 }
 
 .section_program-threeBlocks {
@@ -36,4 +39,8 @@ html {
   font-size: clamp(24px, 5vw, 44px);
   font-weight: 600;
   color: var(--color-yellow);
+}
+
+.noWrap {
+  white-space: nowrap;
 }

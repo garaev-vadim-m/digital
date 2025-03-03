@@ -80,14 +80,14 @@
 .program-twoBlocks-list {
   display: grid;
   gap: clamp(16px, 5vw, 64px);
-  padding-top: clamp(32px, 5vw, 64px);
+  padding-top: clamp(16px, 5vw, 64px);
 }
 
 .program-twoBlocks-text {
   background-color: #222222;
   padding: 0 clamp(16px, 5vw, 32px) clamp(16px, 5vw, 32px);
   display: flex;
-  gap: 24px;
+  gap: clamp(8px, 5vw, 24px);
   flex-direction: column;
   p {
     line-height: 1.4;
@@ -181,18 +181,18 @@
     background-repeat: no-repeat; /* Запрещает повторение изображения */
   }
   .day_one {
-    margin-left: 10px;
+    margin-left: 30px;
   }
 
   .day_two {
-    margin-left: 10px;
+    margin-left: 30px;
   }
   .day_two-paragraph {
     margin-left: 0;
   }
   .day_three {
     margin-top: 0;
-    margin-left: 10px;
+    margin-left: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -208,10 +208,11 @@
   }
   .program_days {
     max-width: 100%;
-    margin-top: 50px;
+    margin-top: 25px;
   }
 
   .program-twoBlocks-text {
+    padding-top: 16px;
     p {
       line-height: 1.4;
       font-weight: 200;
@@ -225,6 +226,21 @@
       font-weight: 200;
       font-size: 14px;
     }
+  }
+
+  .section_program {
+    background-size: 75%; /* Заполняет весь блок, сохраняя пропорции */
+    background-position: right top; /* Центрирует изображение */
+  }
+
+  .program_day-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .program-twoBlocks-list {
+    padding-top: 0;
   }
 }
 
