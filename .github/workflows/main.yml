@@ -31,7 +31,7 @@ jobs:
       - name: Commit and push changes
         run: |
           git config --global garaev-vadim-m "github-actions[bot]"
-          git config --global garaev.vadim.m@mail.ru "github-actions[bot]@users.noreply.github.com"
+          git config --global garaev.v.m@icloud.com "github-actions[bot]@users.noreply.github.com"
           git add docs
           git commit -m "Update built files in docs" || echo "No changes to commit"
           git push
