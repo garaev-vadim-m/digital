@@ -39,6 +39,7 @@
   margin-left: 55px;
   font-size: clamp(20px, 5vw, 25px);
   color: #787878;
+  max-width: 950px;
 }
 
 .greeting_title-date {
@@ -216,6 +217,12 @@
   .section_greeting {
     background-size: 100%; /* Заполняет весь блок, сохраняя пропорции */
     background-position: left top; /* Центрирует изображение */
+  }
+
+  .greeting_block-buttonGroup {
+    button {
+      width: 100%;
+    }
   }
 }
 
