@@ -841,6 +841,10 @@ table {
   .program-twoBlocks-list {
     padding-top: 0;
   }
+
+  .section_program-twoBlocks {
+    background-image: none;
+  }
 }
 
 @media screen and (max-width: 1524px) {
