@@ -41,4 +41,4 @@ jobs:
         run: |
           git add docs
           git commit -m "Update built files in docs" || echo "No changes to commit"
-          git push https://github-actions:${{ secrets.GH_TOKEN }}@github.com/garaev-vadim-m/digital.git master
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/garaev-vadim-m/digital.git master 
