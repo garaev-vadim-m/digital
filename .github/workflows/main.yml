@@ -43,7 +43,7 @@ jobs:
           
       - name: Check empty commit
         run: | 
-          git add A
+          git add -A
           git diff --cashed --exit-code || git commit -m "Update git hub" && git push
       # Шаг 7: Добавление изменений и коммит
       - name: Commit and push changes
