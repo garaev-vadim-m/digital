@@ -32,8 +32,8 @@ jobs:
       # Шаг 6: Настройка Git
       - name: Configure Git
         run: |
-          git config --global garaev-vadim-m "github-actions[bot]"
-          git config --global garaev.v.m@icloud.com "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --list
 
       # Шаг 7: Добавление изменений и коммит
