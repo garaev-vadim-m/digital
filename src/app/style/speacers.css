@@ -1,8 +1,8 @@
 .spacers_list {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: 1fr 1fr;
   gap: clamp(16px, 5vw, 32px);
-  flex-wrap: wrap;
   margin-top: clamp(16px, 5vw, 50px);
 
   .spacers_list-item {
@@ -19,5 +19,29 @@
   li {
     font-size: clamp(14px, 5vw, 22px);
     font-weight: 100;
+  }
+}
+
+.spacers-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .spacers_list {
+    grid-template-columns: 1fr;
+  }
+
+  .spacers_items {
+    li {
+      font-size: 14px;
+    }
+  }
+
+  .spacers-decstop {
+    display: none;
+  }
+
+  .spacers-mobile {
+    display: block;
   }
 }
