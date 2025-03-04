@@ -36,7 +36,15 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --list
 
-
+      - name: Check git status
+        run: | 
+          git status
+          git log --oneline -n 5
+          
+      - name: Check empty commit
+        run: | 
+          git add A
+          git diff --cashed --exit-code || git commit -m "Update git hub" && git push
       # Шаг 7: Добавление изменений и коммит
       - name: Commit and push changes
         run: |
