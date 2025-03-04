@@ -3,7 +3,7 @@ name: Build and Deploy Vite to Docs
 on:
   push:
     branches:
-      - master  # Слушаем коммиты в master
+      - master
   pull_request:
     branches:
       - master
@@ -28,15 +28,10 @@ jobs:
       - name: Build Vite project
         run: npm run build
 
-      - name: Move build to docs folder
-        run: |
-          rm -rf docs
-          mv dist docs
-
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add docs
-          git commit -m "Update built files in docs"
+          git commit -m "Update built files in docs" || echo "No changes to commit"
           git push
