@@ -6,7 +6,7 @@ on:
       - master  # или другая ваша основная ветка
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
