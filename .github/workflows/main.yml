@@ -1,9 +1,9 @@
-name: Build Frontend
+name: Build and Deploy Vite to Docs
 
 on:
   push:
     branches:
-      - master  # или другая ваша основная ветка
+      - master  # Слушаем коммиты в master
   pull_request:
     branches:
       - master
@@ -19,17 +19,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 21  # Укажите версию Node.js
-          cache: 'npm'  # Если используете yarn, укажите 'yarn'
+          node-version: 18
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install  # Или yarn install
+        run: npm install
 
-      - name: Build project
-        run: npm run build  # Или другая команда (например, yarn build)
+      - name: Build Vite project
+        run: npm run build
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: docs/  # Путь к сборке (замените на свой, если он другой)
+      - name: Move build to docs folder
+        run: |
+          rm -rf docs
+          mv dist docs
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git commit -m "Update built files in docs"
+          git push
