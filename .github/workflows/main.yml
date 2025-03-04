@@ -29,14 +29,6 @@ jobs:
       - name: Build Vite project
         run: npm run build
 
-      # Шаг 5: Настройка SSH
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          printf "%s\n" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-
       # Шаг 6: Настройка Git
       - name: Configure Git
         run: |
@@ -49,4 +41,4 @@ jobs:
         run: |
           git add docs
           git commit -m "Update built files in docs" || echo "No changes to commit"
-          git push git@github.com:garaev-vadim-m/digital.git master
+          git push https://github-actions:${{ secrets.GH_TOKEN }}@github.com/garaev-vadim-m/digital.git master
