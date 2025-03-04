@@ -38,9 +38,10 @@ jobs:
 
       # Шаг 7: Добавление изменений и коммит
       - name: Commit and push changes
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add --all
           git commit -m "Update built files in docs" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/garaev-vadim-m/digital.git master 
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/garaev-vadim-m/digital.git master
+ 
