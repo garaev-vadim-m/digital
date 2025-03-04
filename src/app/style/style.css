@@ -44,3 +44,8 @@ html {
 .noWrap {
   white-space: nowrap;
 }
+
+.container_speacers {
+  padding: 0 clamp(16px, 5vw, 150px);
+  margin-bottom: 50px;
+}
