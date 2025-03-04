@@ -45,6 +45,11 @@ html {
   white-space: nowrap;
 }
 
+.container_speacers {
+  padding: 0 clamp(16px, 5vw, 150px);
+  margin-bottom: 50px;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
