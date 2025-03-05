@@ -645,6 +645,7 @@ table {
 
 .day_two-paragraph {
   margin-left: 110px;
+  max-width: 400px;
 }
 
 .day_three {
