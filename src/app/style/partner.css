@@ -34,7 +34,7 @@
 }
 
 .partner_title {
-  font-size: clamp(30px, 5vw, 30px);
+  font-size: clamp(24px, 5vw, 30px);
   font-weight: 600;
   line-height: 1.4;
 }
